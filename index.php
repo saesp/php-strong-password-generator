@@ -12,7 +12,5 @@
         <input type="number" name="lengpassword">
         <input type="submit" value="send">
     </form>
-    
-    
 </body>
 </html>
