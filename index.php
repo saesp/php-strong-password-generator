@@ -9,21 +9,33 @@
 
 
     <?php
-    function passwordGenerator()
-    {
-        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.,_:;#@*!"£$%&/()=?^[]{}<>+';
 
+    $length = $_GET["length"] ?? 0;
+    function passwordGenerator($length)
+    {
+        $chars = array_merge(range('A', 'Z'), range('a', 'z'), range('0', '9'), array('@', '£', '$', '%', '&', '@', '*'));
+        $password = "";
+
+        for ($i = 0; $i < $length; $i++) {
+            $password .= $chars[array_rand($chars)];
+
+        }
+
+        return $password;
     }
     ?>
 
 </head>
 
 <body>
+    <form action=""></form>
     <form>
-        <label for="lengpassword">Lunghezza password</label>
-        <input type="number" name="lengpassword">
+        <label for="lengPassword">Lunghezza password</label>
+        <input type="number" name="length">
         <input type="submit" value="send">
     </form>
+
+    <?php echo passwordGenerator($length) ?>
 </body>
 
 </html>
