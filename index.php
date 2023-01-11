@@ -9,26 +9,15 @@
 
 
     <?php
-
-    $length = $_GET["length"] ?? 0;
-    function passwordGenerator($length)
-    {
-        $chars = array_merge(range('A', 'Z'), range('a', 'z'), range('0', '9'), array('@', '£', '$', '%', '&', '@', '*'));
-        $password = "";
-
-        for ($i = 0; $i < $length; $i++) {
-            $password .= $chars[array_rand($chars)];
-
-        }
-
-        return $password;
-    }
+    $length = $_GET["length"];
+    require_once __DIR__ . "/functions.php";
     ?>
 
 </head>
 
 <body>
-    <form action=""></form>
+    <form>
+    </form>
     <form>
         <label for="lengPassword">Lunghezza password</label>
         <input type="number" name="length">
