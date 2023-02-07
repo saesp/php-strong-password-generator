@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
     <?php
     $length = $_GET["length"];
+
     require_once __DIR__ . "/functions.php";
     ?>
 
@@ -17,12 +17,12 @@
 
 <body>
     <form>
-    </form>
-    <form>
-        <label for="lengPassword">Lunghezza password</label>
-        <input type="number" name="length">
+        <label for="lengthPsw">Lunghezza password</label>
+        <input type="number" name="length" value="<?php echo $length ?>">
         <input type="submit" value="send">
     </form>
+
+    <br>
 
     <?php echo passwordGenerator($length) ?>
 </body>
